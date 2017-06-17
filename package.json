@@ -1,0 +1,17 @@
+{
+  "name": "PostEvent",
+  "version": "0.1.0",
+  "main": "index.js",
+  "author": {
+    "name" : "Julian Xhokaxhiu",
+    "email" : "",
+    "url" : "https://julianxhokaxhiu.com/"
+  },
+  "license": "MIT",
+  "scripts": {
+    "serve": "node_modules/http-server/bin/http-server"
+  },
+  "devDependencies": {
+    "http-server": "^0.10.0"
+  }
+}
