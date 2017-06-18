@@ -8,8 +8,8 @@ module.exports = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    filename: package.name + '.js',
-    library: package.name,
+    filename: 'PostEvent.js',
+    library: 'PostEvent',
     libraryTarget: "umd2"
   },
   module: {
