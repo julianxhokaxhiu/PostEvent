@@ -44,6 +44,12 @@ pe1
 p2.trigger('sayHello', { name: 'User' });
 ```
 
+### UMD Ready
+
+You can use this library in the environment you prefer, thanks to the UMD bundling provided by WebPack.
+
+More info here: https://github.com/umdjs/umd
+
 ##	Install
 
 In order to use this library, you can just include the [latest release](https://github.com/julianxhokaxhiu/PostEvent/releases) in your browser like this
