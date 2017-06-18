@@ -13,7 +13,7 @@ Although this standard doesn't give you the same flexibility and freedom of impl
 
 ##	Install
 
-In order to use this library, you can just include the dist file in your browser like this
+In order to use this library, you can just include the [latest release](https://github.com/julianxhokaxhiu/PostEvent/releases) in your browser like this
 
 ```html
 <!DOCTYPE html>
