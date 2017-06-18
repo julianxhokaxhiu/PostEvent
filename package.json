@@ -1,7 +1,7 @@
 {
   "name": "post-event",
   "version": "0.2.0",
-  "main": "index.js",
+  "main": "dist/PostEvent.js",
   "author": {
     "name": "Julian Xhokaxhiu",
     "email": "",
