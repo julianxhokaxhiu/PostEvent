@@ -25,11 +25,11 @@ export default class PostEvent {
       warn( this.messagePrefix + ' ' + message );
   }
 
-  trigger( name, params ){
+  trigger( name, params = null ){
     if ( name ) {
       let message = {
-        name: name,
-        params: params || null
+        name,
+        params
       };
 
       this.server.postMessage( this.messagePrefix + JSON.stringify(message), '*' );
