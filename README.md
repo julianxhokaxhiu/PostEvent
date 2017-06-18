@@ -36,7 +36,9 @@ In order to use this library, you can just include the [latest release](https://
 or if you prefer as a module
 
 ```javascript
-import PostEvent from 'PostEvent'
+// $ npm i post-event
+
+import PostEvent from 'post-event'
 
 let pe = new PostEvent();
 // console.log( pe );

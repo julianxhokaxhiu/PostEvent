@@ -1,5 +1,5 @@
 {
-  "name": "PostEvent",
+  "name": "post-event",
   "version": "0.2.0",
   "main": "index.js",
   "author": {
