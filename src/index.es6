@@ -12,9 +12,9 @@ export default class PostEvent {
 
     if ( !config ) config = {};
 
-    this.messagePrefix = config.messagePrefix || 'PostEvent:';
     this.debug = config.debug || false;
 
+    this.messagePrefix = 'PostEvent:';
     this.server = window.parent;
   }
 
@@ -39,7 +39,7 @@ export default class PostEvent {
     return this;
   }
 
-  on( name, cb ){
+  on( name, callback ){
     const that = this;
 
     if ( name ) {
@@ -47,7 +47,7 @@ export default class PostEvent {
         if ( event.data.startsWith( that.messagePrefix ) ) {
           let message = JSON.parse( event.data.substr( that.messagePrefix.length ) );
           if ( message.name === name ) {
-            if ( cb ) cb( message.params );
+            if ( callback ) callback( message.params );
           }
         }
       });
