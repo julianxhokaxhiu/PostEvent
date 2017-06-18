@@ -1,11 +1,48 @@
 # PostEvent
 A Cross-Domain Event Handler javascript library. Pure Vanilla JS, no dependencies.
 
-## Background
+## Introduction
 
-You may wonder why this library? Because I was trying to accomplish a full event-driven development in my project, and I was surprised to see that the browser as the only safe way to communicate in a cross-domain fashion, offers only the postMessage.
+This library was born with a simple goal in mind: provide a simple way to handle events, without the effort to code multiple times special code in case we are in a Cross-Domain situation.
 
-Although this standard doesn't give you the same flexibility and freedom of implementation, as the CustomEvent does. Therefore this library try to fit the gap between CustomEvent and Cross-Domain, by providing a simple to use API.
+Say hello to PostEvent.
+
+## Feature set
+
+### Cross-Domain
+
+Event handling by default is not possible when an iFrame is not sharing the same origin URL, or the headers are not set to allow Cross-Domain communication.
+
+This library therefore is using **postMessage** API to enable communication, preserving the same capability of a generic event handling.
+
+### Method chain
+
+If you prefer, you can chain methods, in a jQuery-like way-ish. This is an example of method chain:
+
+```javascript
+var pe = new PostEvent();
+
+pe
+.on( 'myCustomEvent', function (params){
+  console.log( params.foo ); // bar
+})
+.trigger( 'myCustomEvent', { foo: 'bar' } );
+```
+### Single channel across multiple instances
+
+You can instanciate as much times as you want the library. By default it is always using the same **window.parent** entrypoint. This allows you to write simple code, without the need to handle special cases.
+
+```javascript
+var pe1 = new PostEvent(),
+    pe2 = new PostEvent();
+
+pe1
+.on('sayHello', function (params){
+  console.log( 'Hello ' + ( params.name || 'World' ) ); // Hello User
+});
+
+p2.trigger('sayHello', { name: 'User' });
+```
 
 ##	Install
 
@@ -52,20 +89,6 @@ This is an example of custom initialization:
 var pe = new PostEvent({
   debug: true
 });
-```
-
-## Method chain
-
-If you prefer, you can chain methods, in a jQuery-like way-ish. This is an example of method chain:
-
-```javascript
-var pe = new PostEvent();
-
-pe
-.on( 'myCustomEvent', function (params){
-  console.log( params.foo ); // bar
-})
-.trigger( 'myCustomEvent', { foo: 'bar' } );
 ```
 
 ## API
