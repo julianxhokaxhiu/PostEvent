@@ -121,14 +121,29 @@ pe.trigger( 'myCustomEvent', { foo: 'bar' } );
 This API mimics [$.on()](http://api.jquery.com/on/) from jQuery, but it's even more simplier. The function accepts two arguments:
 
 - **name:** the event name you want to subscribe.
-- **callback:** the callback function to call, when the event is detected. The callback function will contain one argument, which will be the payload sent by **trigger**.
+- **callback:** the callback function to call, when the event is detected. **params** object will be given as an argument, or contextual _this_ object. Both can be **null** if no parameters were given during _trigger_.
 
 This is an example of usage:
 
 ```javascript
 var pe = new PostEvent();
 
+// Example 1
+// No arguments, only this
+pe.on( 'myCustomEvent', function (){
+  console.log( this.foo ); // bar
+});
+
+// Example 2
+// One argument, we don't use this
 pe.on( 'myCustomEvent', function (params){
+  console.log( params.foo ); // bar
+});
+
+// Example 3
+// One argument, we use also this
+pe.on( 'myCustomEvent', function (params){
+  console.log( this.foo ); // bar
   console.log( params.foo ); // bar
 });
 ```
