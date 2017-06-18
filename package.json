@@ -1,7 +1,7 @@
 {
   "name": "post-event",
   "description": "A Cross-Domain Event Handler javascript library. Pure Vanilla JS, no dependencies.",
-  "version": "0.2.1",
+  "version": "0.2.2",
   "main": "dist/PostEvent.js",
   "author": {
     "name": "Julian Xhokaxhiu",
