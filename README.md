@@ -1,15 +1,11 @@
 # PostEvent
 A Cross-Domain Event Handler javascript library. Pure Vanilla JS, no dependencies.
 
-
-
 ## Background
 
 You may wonder why this library? Because I was trying to accomplish a full event-driven development in my project, and I was surprised to see that the browser as the only safe way to communicate in a cross-domain fashion, offers only the postMessage.
 
 Although this standard doesn't give you the same flexibility and freedom of implementation, as the CustomEvent does. Therefore this library try to fit the gap between CustomEvent and Cross-Domain, by providing a simple to use API.
-
-
 
 ##	Install
 
@@ -44,8 +40,6 @@ let pe = new PostEvent();
 // console.log( pe );
 ```
 
-
-
 ## Initialization
 
 When you instanciate the library, you can pass some configuration options, if you prefer:
@@ -60,8 +54,6 @@ var pe = new PostEvent({
 });
 ```
 
-
-
 ## Method chain
 
 If you prefer, you can chain methods, in a jQuery-like way-ish. This is an example of method chain:
@@ -75,8 +67,6 @@ pe
 })
 .trigger( 'myCustomEvent', { foo: 'bar' } );
 ```
-
-
 
 ## API
 
