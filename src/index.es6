@@ -29,7 +29,7 @@ export default class PostEvent {
     if ( name ) {
       let message = {
         name: name,
-        params: params || {}
+        params: params || null
       };
 
       this.server.postMessage( this.messagePrefix + JSON.stringify(message), '*' );
@@ -47,7 +47,7 @@ export default class PostEvent {
         if ( event.data.startsWith( that.messagePrefix ) ) {
           let message = JSON.parse( event.data.substr( that.messagePrefix.length ) );
           if ( message.name === name ) {
-            if ( callback ) callback( message.params );
+            if ( callback ) callback.call( message.params, message.params );
           }
         }
       });
