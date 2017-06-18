@@ -26,7 +26,7 @@ In order to use this library, you can just include the dist file in your browser
 		<script src="dist/PostEvent.js"></script>
 		<script>
 			var pe = new PostEvent();
-			
+
 			// console.log( pe );
 		</script>
 	</body>
@@ -84,8 +84,8 @@ This library is made of two simple APIs:
 
 This API mimics [$.trigger()](http://api.jquery.com/trigger/) from jQuery. The function accepts two arguments:
 
-- _name_: the event name you want to trigger.
-- _params_: the payload that you want to send.
+- **name:** the event name you want to trigger.
+- **params:** the payload that you want to send.
 
 This is an example usage:
 
@@ -99,8 +99,8 @@ pe.trigger( 'myCustomEvent', { foo: 'bar' } );
 
 This API mimics [$.on()](http://api.jquery.com/on/) from jQuery, but it's even more simplier. The function accepts two arguments:
 
-- _name:_ the event name you want to subscribe.
-- _callback:_ the callback function to call, when the event is detected. The callback function will contain one argument, which will be the payload sent by **trigger**.
+- **name:** the event name you want to subscribe.
+- **callback:** the callback function to call, when the event is detected. The callback function will contain one argument, which will be the payload sent by **trigger**.
 
 This is an example of usage:
 
