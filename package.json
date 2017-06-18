@@ -1,6 +1,6 @@
 {
   "name": "PostEvent",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "main": "index.js",
   "author": {
     "name": "Julian Xhokaxhiu",
@@ -9,7 +9,7 @@
   },
   "license": "MIT",
   "scripts": {
-    "postinstall": "webpack",
+    "prepublish": "webpack",
     "serve": "webpack-dev-server"
   },
   "devDependencies": {
