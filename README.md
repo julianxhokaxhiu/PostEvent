@@ -1,5 +1,5 @@
 # PostEvent
-A simple postMessage wrapper that acts like a CustomEvent. Pure VanillaJS, no dependencies.
+A Cross-Domain Event Handler javascript library. Pure Vanilla JS, no dependencies.
 
 
 
