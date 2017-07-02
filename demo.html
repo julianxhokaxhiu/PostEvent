@@ -20,18 +20,8 @@
           appendIFrame = function ( id ) {
             var iframe = document.createElement('iframe');
             iframe.id = id;
-            iframe.src = 'about:blank';
+            iframe.src = id + '.html';
             document.body.appendChild(iframe);
-
-            if(iframe.contentDocument) doc = iframe.contentDocument;
-            else if(iframe.contentWindow) doc = iframe.contentWindow.document;
-            else if(iframe.document) doc = iframe.document;
-
-            if(doc == null) throw "Document not initialized";
-
-            doc.open();
-            doc.write(document.getElementById( iframe.id + '-tpl' ).innerHTML);
-            doc.close();
           }
 
       postEvent
@@ -43,59 +33,13 @@
       })
       .trigger( 'say', { message: 'Hello World' });
 
-      appendIFrame( 'test' );
-      appendIFrame( 'test2' );
+      appendIFrame( 'iframe1' );
+      appendIFrame( 'iframe2' );
 
       setTimeout( function () {
         postEvent.trigger( 'iframeInit' );
       }, 10000 );
     }
   </script>
-  <!-- HTML template of test iframe -->
-  <template id="test-tpl">
-    <!DOCTYPE html>
-      <html>
-        <head>
-        </head>
-        <body>
-          <script src="/dist/PostEvent.js"></script>
-          <script>
-            window.onload = function () {
-              var postEvent = new PostEvent();
-
-              postEvent
-              .trigger( 'only.you' )
-              .on( 'iframeInit', function () {
-                alert( 'Hello, this is ' + window.frameElement.id);
-              })
-            }
-          </script>
-        </body>
-      </html>
-  </template>
-  <!-- HTML template of test2 iframe -->
-  <template id="test2-tpl">
-    <!DOCTYPE html>
-      <html>
-        <head>
-        </head>
-        <body>
-          <script src="/dist/PostEvent.js"></script>
-          <script>
-            window.onload = function () {
-              var postEvent = new PostEvent();
-
-              postEvent
-              .on( 'only.you', function () {
-                alert( '[' + window.frameElement.id + '] ' + 'Were you calling me?')
-              })
-              .on( 'iframeInit', function () {
-                alert( 'Hello, this is ' + window.frameElement.id);
-              })
-            }
-          </script>
-        </body>
-      </html>
-  </template>
 </body>
 </html>

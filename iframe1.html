@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head>
+  </head>
+  <body>
+    <script src="/dist/PostEvent.js"></script>
+    <script>
+      window.onload = function () {
+        var postEvent = new PostEvent();
+
+        postEvent
+        .trigger( 'only.you' )
+        .on( 'iframeInit', function () {
+          alert( 'Hello, this is ' + window.frameElement.id);
+        })
+      }
+    </script>
+  </body>
+</html>
