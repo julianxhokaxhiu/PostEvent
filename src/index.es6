@@ -14,12 +14,12 @@ export default class PostEvent {
       warn( this.messageType + ' ' + message );
   }
 
-  trigger( name, params ){
+  trigger( name, params = null ){
     if ( name ) {
       let message = {
         type: this.messageType,
-        name: name,
-        params: params || null
+        name,
+        params
       };
 
       this.server.postMessage( message, '*' );
