@@ -1,5 +1,4 @@
-const path = require('path'),
-      package = require('./package.json');
+const path = require('path')
 
 module.exports = {
   entry: './src/',
