@@ -40,7 +40,7 @@ export default class PostEvent {
     if ( name ) {
       me.server.addEventListener( 'message', function ( event ){
         if ( typeof event.data === 'object' ) {
-          if ( event.data.type === that.messageType ) {
+          if ( event.data.type === me.messageType ) {
             let message = event.data
 
             if ( message.name === name ) {
