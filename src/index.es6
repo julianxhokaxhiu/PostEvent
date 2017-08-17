@@ -5,7 +5,7 @@ export default class PostEvent {
     if ( !config ) config = {}
 
     me.debug = config.debug || false
-    me.messageType = me.constructor.name
+    me.messageType = config.namespace || me.constructor.name
     me.server = window.parent
   }
 

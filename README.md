@@ -88,12 +88,14 @@ let pe = new PostEvent();
 When you instanciate the library, you can pass some configuration options, if you prefer:
 
 - **debug:** if _true_ it will print some warnings, if the library is misused.
+- **namespace:** if defined, it will be used to filter messages type. Useful if you want to use multiple instances, with different channels. By default is this class name ( `PostEvent` )
 
 This is an example of custom initialization:
 
 ```javascript
 var pe = new PostEvent({
-  debug: true
+  debug: true,
+  namespace: 'MyCustomNamespace'
 });
 ```
 
